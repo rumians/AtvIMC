@@ -33,21 +33,20 @@
 
             if (imc >= 30) {
                 document.getElementById('corsinha').style.background = "red";
-                document.getElementById('corsinha').innerHTML = "Voce esta obeso";
+                document.getElementById('corsinha').innerHTML = "<p class='texto'>Voce esta obeso</p>";
             } else if (imc >= 25) {
                 document.getElementById('corsinha').style.background = "orange";
-                document.getElementById('corsinha').innerHTML = "Voce esta acima do peso";
+                document.getElementById('corsinha').innerHTML = "<p class='texto'>Voce esta acima do peso</p>";
             } else if (imc >= 18.5) {
                 document.getElementById('corsinha').style.background = "green";
-                document.getElementById('corsinha').innerHTML = "Voce esta com o peso ideal e saudavel";
+                document.getElementById('corsinha').innerHTML = "<p class='texto'>Voce esta com o peso ideal e saudavel</p>";
             } else if (imc < 18.5) {
                 document.getElementById('corsinha').style.background = "red";
-                document.getElementById('corsinha').innerHTML = "Voce esta a baixo do peso!";
+                document.getElementById('corsinha').innerHTML = "<p class='texto'>Voce esta a baixo do peso!</p>";
             } else if (imc >= 18.5) {
                 document.getElementById('corsinha').style.background = "green";
-                document.getElementById('corsinha').innerHTML = "Voce esta com o peso ideal e saudavel";
+                document.getElementById('corsinha').innerHTML = "<p class='texto'>Voce esta com o peso ideal e saudavel</p>";
             }
-            
         }
     </script>
     <style>
@@ -60,11 +59,19 @@
             background-color: rgb(51, 53, 53);
         }
 
+        .texto {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-around;
+            color: white;
+        }
+
         #corsinha {
-            height: 50px;
-            width: 100px;
+            height: 80px;
+            width: 245px;
             border-radius: 5px;
         }
+
 
         form {
             display: flex;
