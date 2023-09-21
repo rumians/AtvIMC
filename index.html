@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Calcular() {
+            let peso = document.getElementById("peso").value;
+            let altura = document.getElementById("altura").value;
+            if (peso == "") {
+                alert("Informe o peso!!")
+            } else if (altura == "") {
+                alert("Informe a altura!!")
+            } else {
+                let imc = Number(peso) / Number(altura) ** 2.
+                document.getElementById("resultado").value = imc.toFixed(2);
+                cor(imc);
+            }
+
+        }
+
+        function limpar() {
+            document.getElementById("peso").value = "";
+            document.getElementById("altura").value = "";
+            document.getElementById("resultado").value = "";
+            document.getElementById("corsinha").style.background = "";
+            document.getElementById("corsinha").innerHTML = "";
+        }
+
+        function cor(imc) {
+
+            if (imc >= 30) {
+                document.getElementById('corsinha').style.background = "red";
+                document.getElementById('corsinha').innerHTML = "Voce esta obeso";
+            } else if (imc >= 25) {
+                document.getElementById('corsinha').style.background = "orange";
+                document.getElementById('corsinha').innerHTML = "Voce esta acima do peso";
+            } else if (imc >= 18.5) {
+                document.getElementById('corsinha').style.background = "green";
+                document.getElementById('corsinha').innerHTML = "Voce esta com o peso ideal e saudavel";
+            } else if (imc < 18.5) {
+                document.getElementById('corsinha').style.background = "red";
+                document.getElementById('corsinha').innerHTML = "Voce esta a baixo do peso!";
+            } else if (imc >= 18.5) {
+                document.getElementById('corsinha').style.background = "green";
+                document.getElementById('corsinha').innerHTML = "Voce esta com o peso ideal e saudavel";
+            }
+            
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(51, 53, 53);
+        }
+
+        #corsinha {
+            height: 50px;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 12rem auto auto auto;
+        }
+
+        form div input {
+            border-radius: 8px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        form div label {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 12px;
+        }
+
+        form div {
+            margin-top: 15px;
+            margin-right: 30px;
+        }
+
+        form {
+            background-color: rgb(85, 80, 80);
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="peso">Peso</label>
+            <input type="number" id="peso">
+        </div>
+        <div>
+            <label for="altura">Altura</label>
+            <input type="number" id="altura">
+        </div>
+        <div>
+            <label for="resultado">resultado</label>
+            <input type="number" id="resultado" disabled>
+        </div>
+        <div>
+            <input type="button" value="Calcular" onclick="Calcular()">
+            <input type="button" value="Limpar" onclick="limpar()">
+        </div>
+        <div id="corsinha"></div>
+    </form>
+</body>
+
+</html>
